@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions - Student Library Management</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        /* General body and table styling */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2, h3 {
+            color: #4CAF50;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h3 {
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            max-width: 1200px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .form-container h3 {
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Transactions</h2>
+
+<div class="form-container">
+    <h3>Issue Book</h3>
+    <form id="issueForm">
+        <div class="form-group">
+            <label for="issueCardId">Card ID</label>
+            <input type="number" id="issueCardId" required>
+        </div>
+        <div class="form-group">
+            <label for="issueBookId">Book ID</label>
+            <input type="number" id="issueBookId" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Issue Book</button>
+        </div>
+    </form>
+</div>
+
+<div class="form-container">
+    <h3>Return Book</h3>
+    <form id="returnForm">
+        <div class="form-group">
+            <label for="returnCardId">Card ID</label>
+            <input type="number" id="returnCardId" required>
+        </div>
+        <div class="form-group">
+            <label for="returnBookId">Book ID</label>
+            <input type="number" id="returnBookId" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Return Book</button>
+        </div>
+    </form>
+</div>
+
+<h3>_________________________________________________________^_________________________________________________________</h3>
+<table id="transactionsTable">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Transaction ID</th>
+        <th>Card ID</th>
+        <th>Book ID</th>
+        <th>Fine Amount</th>
+        <th>Status</th>
+        <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Transaction rows will be populated here -->
+    </tbody>
+</table>
+
+<script src="/transactions.js"></script>
+
+</body>
+</html>

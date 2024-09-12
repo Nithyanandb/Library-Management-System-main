@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards - Student Library Management</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2, h3 {
+            color: #4CAF50;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h3 {
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            max-width: 1200px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Cards</h2>
+
+<h3>___________________________________________________________________________________________________________________</h3>
+
+<table id="cardsTable">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Student Name</th>
+        <th>Status</th>
+        <th>Created On</th>
+        <th>Updated On</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Thymeleaf to loop through cards -->
+    <tr th:each="card : ${cards}">
+        <td th:text="${card.id}"></td>
+        <td th:text="${card.student.name}"></td> <!-- Adjust if `student` has a different name property -->
+        <td th:text="${card.cardStatus}"></td>
+        <td th:text="${card.createdOn}"></td>
+        <td th:text="${card.updatedOn}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<script src="/cards.js"></script>
+
+</body>
+</html>
